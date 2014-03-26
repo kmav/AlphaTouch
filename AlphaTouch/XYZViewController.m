@@ -30,6 +30,15 @@
     [firstButton setTitle:@"Click me!" forState:UIControlStateNormal];
     // Add button on top of our view
     [self.view addSubview:firstButton];
+    
+    // Adding a label now ...
+    // Create a new label with frame
+    UILabel *firstLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 30, 200, 44)];
+    firstLabel.backgroundColor = [UIColor clearColor];
+    // Set the label text
+    firstLabel.text = @"Hello, welcome to my app!";
+    // Add the label as a subview
+    [self.view addSubview:firstLabel];
 
 }
 
