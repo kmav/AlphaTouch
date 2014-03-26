@@ -26,11 +26,6 @@
     
     self.viewController = [[XYZViewController alloc] init];
     
-    // Create a view (paint) with the size of the whole screen
-    UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
-    colorView.backgroundColor = [UIColor yellowColor];
-    self.viewController.view = colorView;
-    
     // The view controller (paint brush) gets control of the window
     self.window.rootViewController = self.viewController;
     // Means it should receive all keyboard and non-touch events
