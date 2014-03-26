@@ -23,11 +23,13 @@
     
     // Adding a button now...
     // Create a new UIButton of type UIButtonTypeRoundedRect
+    // or UIButtonTypeDetailDisclosure
     UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
     firstButton.frame = CGRectMake(100, 100, 100, 44);
     // Set the button title, what it shows normally
     [firstButton setTitle:@"Click me!" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
     // Add button on top of our view
     [self.view addSubview:firstButton];
     
