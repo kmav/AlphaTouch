@@ -10,6 +10,7 @@
 
 @class XYZViewController;
 
+// UIResponder: Interface for responding to events
 @interface XYZAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

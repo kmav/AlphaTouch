@@ -20,6 +20,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor yellowColor];
+    
+    // Adding a button now...
+    // Create a new UIButton of type UIButtonTypeRoundedRect
+    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
+    firstButton.frame = CGRectMake(100, 100, 100, 44);
+    // Set the button title, what it shows normally
+    [firstButton setTitle:@"Click me!" forState:UIControlStateNormal];
+    // Add button on top of our view
+    [self.view addSubview:firstButton];
 
 }
 
