@@ -28,10 +28,32 @@
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
     firstButton.frame = CGRectMake(100, 100, 100, 44);
     // Set the button title, what it shows normally
-    [firstButton setTitle:@"Click me!" forState:UIControlStateNormal];
+    [firstButton setTitle:@"Make 50%" forState:UIControlStateNormal];
     [firstButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    // Adding control events
+    [firstButton addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
     // Add button on top of our view
     [self.view addSubview:firstButton];
+    
+    
+    // Adding a button now...
+    // Create a new UIButton of type UIButtonTypeRoundedRect
+    // or UIButtonTypeDetailDisclosure
+    UIButton *secondButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
+    secondButton.frame = CGRectMake(100, 300, 100, 44);
+    // Set the button title, what it shows normally
+    [secondButton setTitle:@"Make 100%" forState:UIControlStateNormal];
+    [secondButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    // Adding control events
+    [secondButton addTarget:self
+                    action:@selector(buttonPressed:)
+          forControlEvents:UIControlEventTouchUpInside];
+    // Add button on top of our view
+    [self.view addSubview:secondButton];
+    
     
     // Adding a label now ...
     // Create a new label with frame
@@ -69,4 +91,16 @@
     UIView *colorView = [[UIView alloc] initWithFrame:viewRect];
     self.view = colorView;
 }
+
+- (void)buttonPressed:(UIButton *)sender
+{
+    NSLog(@"Button pressed, sender: %@", sender);
+    if ([sender.titleLabel.text isEqualToString:@"Make 50%"]) {
+        self.view.alpha = .5;
+    } else {
+        self.view.alpha = 1;
+    }    // To remove the button from superview!
+    // [sender removeFromSuperview];
+}
+
 @end

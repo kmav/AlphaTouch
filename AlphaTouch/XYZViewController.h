@@ -10,4 +10,6 @@
 
 @interface XYZViewController : UIViewController
 
+- (void)buttonPressed:(UIButton *)sender;
+
 @end
