@@ -11,5 +11,6 @@
 @interface XYZViewController : UIViewController
 
 - (void)buttonPressed:(UIButton *)sender;
+- (void)changeBackgroundColor:(UIButton *)sender;
 
 @end

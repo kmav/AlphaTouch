@@ -28,11 +28,11 @@
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
     firstButton.frame = CGRectMake(100, 100, 100, 44);
     // Set the button title, what it shows normally
-    [firstButton setTitle:@"Make 50%" forState:UIControlStateNormal];
-    [firstButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    [firstButton setTitle:@"Make green!" forState:UIControlStateNormal];
+    // [firstButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
     // Adding control events
     [firstButton addTarget:self
-                    action:@selector(buttonPressed:)
+                    action:@selector(changeBackgroundColor:)
           forControlEvents:UIControlEventTouchUpInside];
     // Add button on top of our view
     [self.view addSubview:firstButton];
@@ -45,11 +45,11 @@
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
     secondButton.frame = CGRectMake(100, 300, 100, 44);
     // Set the button title, what it shows normally
-    [secondButton setTitle:@"Make 100%" forState:UIControlStateNormal];
-    [secondButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    [secondButton setTitle:@"Make blue!" forState:UIControlStateNormal];
+    // [secondButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
     // Adding control events
     [secondButton addTarget:self
-                    action:@selector(buttonPressed:)
+                    action:@selector(changeBackgroundColor:)
           forControlEvents:UIControlEventTouchUpInside];
     // Add button on top of our view
     [self.view addSubview:secondButton];
@@ -99,7 +99,20 @@
         self.view.alpha = .5;
     } else {
         self.view.alpha = 1;
-    }    // To remove the button from superview!
+    }
+    // To remove the button from superview!
+    // [sender removeFromSuperview];
+}
+
+- (void)changeBackgroundColor:(UIButton *)sender
+{
+    NSLog(@"Button pressed, sender: %@", sender);
+    if ([sender.titleLabel.text isEqualToString:@"Make green!"]) {
+        self.view.backgroundColor = [UIColor greenColor];
+    } else {
+        self.view.backgroundColor = [UIColor blueColor];
+    }
+    // To remove the button from superview!
     // [sender removeFromSuperview];
 }
 
