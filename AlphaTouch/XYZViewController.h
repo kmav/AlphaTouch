@@ -10,6 +10,9 @@
 
 @interface XYZViewController : UIViewController
 
+@property (weak, nonatomic) UIButton *fiftyPercentButton;
+@property (weak, nonatomic) UIButton *hundredPercentButton;
+
 - (void)buttonPressed:(UIButton *)sender;
 - (void)changeBackgroundColor:(UIButton *)sender;
 

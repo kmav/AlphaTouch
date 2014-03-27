@@ -24,35 +24,35 @@
     // Adding a button now...
     // Create a new UIButton of type UIButtonTypeRoundedRect
     // or UIButtonTypeDetailDisclosure
-    UIButton *firstButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.fiftyPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
-    firstButton.frame = CGRectMake(100, 100, 100, 44);
+    self.fiftyPercentButton.frame = CGRectMake(100, 100, 100, 44);
     // Set the button title, what it shows normally
-    [firstButton setTitle:@"Make green!" forState:UIControlStateNormal];
-    // [firstButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    [self.fiftyPercentButton setTitle:@"Make green!" forState:UIControlStateNormal];
+    [self.fiftyPercentButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
     // Adding control events
-    [firstButton addTarget:self
+    [self.fiftyPercentButton addTarget:self
                     action:@selector(changeBackgroundColor:)
           forControlEvents:UIControlEventTouchUpInside];
     // Add button on top of our view
-    [self.view addSubview:firstButton];
+    [self.view addSubview:self.fiftyPercentButton];
     
     
     // Adding a button now...
     // Create a new UIButton of type UIButtonTypeRoundedRect
     // or UIButtonTypeDetailDisclosure
-    UIButton *secondButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.hundredPercentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     // Located at x = 100pts, y = 100pts, 100pts width, 44pts height
-    secondButton.frame = CGRectMake(100, 300, 100, 44);
+    self.hundredPercentButton.frame = CGRectMake(100, 300, 100, 44);
     // Set the button title, what it shows normally
-    [secondButton setTitle:@"Make blue!" forState:UIControlStateNormal];
-    // [secondButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
+    [self.hundredPercentButton setTitle:@"Make blue!" forState:UIControlStateNormal];
+    [self.hundredPercentButton setTitle:@"Ouch!" forState:UIControlStateHighlighted];
     // Adding control events
-    [secondButton addTarget:self
+    [self.hundredPercentButton addTarget:self
                     action:@selector(changeBackgroundColor:)
           forControlEvents:UIControlEventTouchUpInside];
     // Add button on top of our view
-    [self.view addSubview:secondButton];
+    [self.view addSubview:self.hundredPercentButton];
     
     
     // Adding a label now ...
@@ -95,7 +95,7 @@
 - (void)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender: %@", sender);
-    if ([sender.titleLabel.text isEqualToString:@"Make 50%"]) {
+    if ([sender isEqual:self.fiftyPercentButton]) {
         self.view.alpha = .5;
     } else {
         self.view.alpha = 1;
@@ -107,7 +107,7 @@
 - (void)changeBackgroundColor:(UIButton *)sender
 {
     NSLog(@"Button pressed, sender: %@", sender);
-    if ([sender.titleLabel.text isEqualToString:@"Make green!"]) {
+    if ([sender isEqual:self.fiftyPercentButton]) {
         self.view.backgroundColor = [UIColor greenColor];
     } else {
         self.view.backgroundColor = [UIColor blueColor];
